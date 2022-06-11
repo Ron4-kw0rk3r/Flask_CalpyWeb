@@ -1,0 +1,115 @@
+<!-- templates/jumper.html -->
+<!-- tesing site web in flask in django-->
+
+<!DOCTYPE html>
+
+<html lang="es">
+	
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="basic calculator integrals , other operations aritmeticas ">
+		<!-- create descrioption all page in site --> 
+		<meta name="viewport" content="widht=device=width, initial-scale=1.0">
+		<!-- descrition on creater web develoop-->
+		<meta name="author" content="Bryan Ronaldo">
+		
+		<title> Unamed site anonymous </title>
+		<!-- create  personall font check  in press code -->
+		<!--  no depends in css style create program -->
+		<!-- import style in web  in programming code render  fonts -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+		<link rel="stylesheet" href="static/style.css">
+		<style>
+			body{
+
+				font-family: "Trirong";
+			}
+			input {
+				
+				color: #f1f1f1
+				font-size: 10px;
+				border: none;
+				font: arial;
+				
+				width: 300px;
+				height: 50px;
+				border-radius: 9px 
+			}
+			input[type=number] {
+				color: #f1f1f1
+				font-size: 10px;
+				border: none;
+				font: arial;
+				
+				width: 220px;
+				height: 40px;
+				border-radius: 9px 
+
+				
+			}
+			input[type=submit] {
+
+				padding: 100 100px;
+			}
+
+			
+		</style>
+	</head>
+	<body>
+		<h1> <center> CALCULATOR </center> </h1> 
+		<br>
+	
+		<p> hello test </p>
+		<p> progress in site develoop create all features complementation one resolv problem in determinate time </p>
+		<p> create all features  in create function seeders  </p>
+		<h4> <center> <strong> testing programa using flask framework  </strong></center> </h4>
+		<h1> Integrals resolv </h1>
+
+		<section class="operative">
+		
+			<form action="/operative"  method="POST">
+				<label for="number one"> Number one </label>
+				<input type="number" placeholder="value" name="value_1" />
+				<br>
+				<!-- placeholder texto fantasma dentro del contendor que mantiene la entrada--> 
+				<label for="number twu"> Number Twu </label>
+				<input type="number" placeholder="value" name="value_2">
+				<!--input type="number" id="operation"-->
+				<!--input type="password" id="check"--> 
+				<select name="operators">
+					<option value="rails"> rails </option>
+					<option value="sum"> add </option>
+					<option value="rest"> rest </option>
+					<option value="multiply"> product </option>
+					<option value="divide"> division </option>
+				</select>
+				<br>
+				<input type="submit" value="evaluador" id="calc_eval" class="btn"  />
+				<h2> the result is : {{ result }} </h2>
+
+
+				<br>
+				<label for="integrals"> Integrals resolv </label>
+				<input placeholder="integral here" name="integral_1">
+				<select name="check_comp">
+					<option value="integral"> Integral </option>
+					<option value="integral"> derivate </option>
+				</select>
+				<h3>  the operation is  : {{ integral }} </h3>
+				<br>
+				<input type="submit" value="result" id="integral" class="btn">
+				
+			</form>
+		</section>
+		<!-- make bottom  in site text program site web -->
+	
+		<button class="button"> result </button>
+		<br>
+
+		<button class="button1"> result </button>
+		<br>
+		<button class="button2"> result </button>
+	</body>
+</html>
+
+<!-- Using render_template() - -->
