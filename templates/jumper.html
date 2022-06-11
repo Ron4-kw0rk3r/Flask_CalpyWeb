@@ -68,36 +68,37 @@
 		<section class="operative">
 		
 			<form action="/operative"  method="POST">
-				<label for="number one"> Number one </label>
+				<label for="number one"> Number one : </label>
 				<input type="number" placeholder="value" name="value_1" />
 				<br>
 				<!-- placeholder texto fantasma dentro del contendor que mantiene la entrada--> 
-				<label for="number twu"> Number Twu </label>
+				<label for="number twu"> Number Twu : </label>
 				<input type="number" placeholder="value" name="value_2">
 				<!--input type="number" id="operation"-->
 				<!--input type="password" id="check"--> 
 				<select name="operators">
-					<option value="rails"> rails </option>
-					<option value="sum"> add </option>
+					<!--option value="rails"> rails </option-->
+					<option value="sum"> sum </option>
 					<option value="rest"> rest </option>
-					<option value="multiply"> product </option>
-					<option value="divide"> division </option>
+					<option value="multiply"> multiply </option>
+					<option value="divi"> divide </option>
+					<option value="mod"> mod </option> 
 				</select>
 				<br>
 				<input type="submit" value="evaluador" id="calc_eval" class="btn"  />
 				<h2> the result is : {{ result }} </h2>
 
-
 				<br>
-				<label for="integrals"> Integrals resolv </label>
+
+				<label for="integrals"> Integrals :</label>
 				<input placeholder="integral here" name="integral_1">
 				<select name="check_comp">
 					<option value="integral"> Integral </option>
 					<option value="integral"> derivate </option>
 				</select>
-				<h3>  the operation is  : {{ integral }} </h3>
+				<input type="submit" value="complex" id="integral" class="btn">
 				<br>
-				<input type="submit" value="result" id="integral" class="btn">
+				<h3>  the operation is  : {{ integral }} </h3>
 				
 			</form>
 		</section>

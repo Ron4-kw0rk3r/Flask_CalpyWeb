@@ -3,7 +3,10 @@
 # from pydoc import ErrorDuringImport
 
 
-from numbers import Integral
+# from numbers import Integral
+
+
+# rom re import I
 
 
 try: 
@@ -40,41 +43,52 @@ def operative():
     #print('hellow rose')
     value_1 = request.form["value_1"]
     value_2 = request.form["value_2"]
-    operations = request.form['operators']
-    value_4 =  float(value_1) + float(value_2)
-    value_3 = "hellow rose"
+    operations = str(request.form['operators'])
+    
+    # value_4 =  float(value_1) + float(value_2)
+    #value_3 = "hellow rose"
     
     
+    
+    awensome = brainsolver(value_1, value_2, operations)
+    return render_template("jumper.html", result=awensome)
 
+    # if operations == 'sum':
+
+    # for z in  [ 'sum', 'rest', 'mod', 'divi', 'mult' ]:
+    
     #calculator
     # 
-    if operations == 'rails':
-        return render_template("jumper.html", result=value_4)
-    elif  operations  == 'add':
-        return render_template("jumper.html", result=brainsolver(value_1, value_2, 'add'))
+    #if operations == 'rails':
+    #    return render_template("jumper.html", result=value_4)
+    #if  operations  == 'sum':
 
-    elif operations == 'rest':
-        return  render_template("jumper.html", result=brainsolver(value_1, value_2, 'rest'))
-    elif operations == 'mult':
-        return render_template("jumper.html", result=brainsolver(value_1, value_2, 'mult'))
-    elif operations == 'divi':
-        return render_template("jumper.html", result=brainsolver(value_1, value_2, 'divi'))
+    #elif operations == 'rest':
+    #    return  render_template("jumper.html")
+    #elif operations == 'multiply':
+    #    return render_template("jumper.html", result=brainsolver(value_1, value_2, operations))
+    #elif operations == 'divide':
+    #    return render_template("jumper.html", result=brainsolver(value_1, value_2, operations))
         
-    elif  operations  == 'mod':
-        return render_template("jumper.html", result=brainsolver(value_1, value_2, 'mod'))
-    else:
-        return render_template("index.html")
+    #elif  operations  == 'mod':
+    #    return render_template("jumper.html", result=brainsolver(value_1, value_2, operations))
+    #else:
+    #    return render_template("index.html")
 
         
 @app.route('/integrals', methods=["POST"])
 def integrals():
     integral_1 = request.form["integral_1"]
-    check_comp =  request.form["check_comp"]
+    check_comp =  str(request.form['check_comp'])
+
     if check_comp == 'derivate':
         return  render_template("jumper.html", Integral=integral_1 )
     elif check_comp == 'integral':
-    
+
         return  render_template("jumper.html", Integral=integral_1 )
+    
+    else:
+        return render_template("index.html")
     # comprovete 
         # pass 
 
