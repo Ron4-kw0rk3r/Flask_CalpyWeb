@@ -1,0 +1,37 @@
+# save my file is import file command null 
+# programming in flask is code imported as sussesfully code segment
+# ant not documentation toghetter
+# is a better  not found commander 
+# testing all features  note prolonger is funny better  not a round
+
+# install flask in python 
+
+# pip install  virtualenv 
+# pip3 install venv 
+
+# or linux 
+# code is better not a round sussesfully code
+
+# python -m venv .venv  --prompt flask 
+# python3 -m venv .venv
+# activate venv
+# .venv/bin/activate
+pip install flask 
+
+# sussefully  installer program web interval 
+
+#all features node assembly code  leerning all node traccing
+
+create file : sample.py
+import flask 
+
+#import library  
+
+from flask import Flask 
+
+
+sussesfully sample testing arround 
+ 
+ 
+ 
+

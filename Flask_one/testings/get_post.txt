@@ -1,0 +1,32 @@
+metodo get post 
+
+request 
+get recupera datos 
+ - particula en  la memoria cache de un get solicitud
+  - utilizados de un lado del servidor
+  - no tiene un cuerpo 
+  - solo son datos de la URL
+
+  - indempotente  hacerlo un millon de veces es el mismo resultado
+post captura de datos
+	- especifica la codificacion
+	 
+	- peticion de un cambio
+	- envio de datos 
+	- contenido de datos cuales son actualizados por el navegador
+	
+@{datos}
+	- envio de datos desde el servidor 
+	- recibe datos desde  el servidor
+	* captura datos
+	{get} 
+		metodo de lectura de datos desde el servidor wev 
+			dice el servidor que el cliente lee el documento 
+			filtro de usuario se trasmiten en metodo GET
+
+
+	{POST}
+		metodo post enviar datos de un sitio web
+		captura del formulario ya recibido 
+
+		o como datos de entrada

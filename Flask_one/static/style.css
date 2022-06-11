@@ -1,0 +1,55 @@
+/* settings/config.css */
+
+/* testing css in hrml configs decoration  file in source implement */
+
+
+
+body{ color: #F1F1F1;
+
+
+	background: #000119;
+}
+
+
+.button {
+
+	border: none;
+	color: #00f1f1;
+	padding: 0 400px;
+
+	text-align: center;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	
+
+	
+}
+
+.button:hover {
+
+	background-color: rgb(86, 233, 142);
+}
+
+input[type=submit] {
+	color: #f1f1f1;
+	background-color:  #F10000;
+	font-size: 26px;
+	border: none;
+	font: arial;
+	width: 220px;
+	height: 40px;
+	padding: 400 400px;
+	cursor: pointer;
+	font: arial;
+
+
+	
+}
+
+input[type=submit]:hover {
+	color: rgb(255, 255, 255);
+	background-color: rgba(117, 241, 200);
+	
+}
