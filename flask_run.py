@@ -12,12 +12,18 @@
 #from crypt import methods
 
 
+from crypt import methods
+from tabnanny import check
 from tkinter import W
 
 
 try: 
 
     import flask
+    from solvintegral import intervaldor
+    from solvintegral import limitation
+    from solvintegral import  decliff
+    from solvintegral import matrxxx
     from brainrsolver import  brainsolver
     from flask import Flask, render_template
     from flask import request
@@ -102,19 +108,22 @@ def integrals():
         integral_one = request.form["integral_1"]
         check_comp = str(request.form['check_comp'])
 
-        # interlooper = int_solver(integral_one)
+        interlooper = intervaldor(integral_one)
+        interlimit = limitation(integral_one)
+        interderiv =  decliff(integral_one)
+        kmatris = matrxxx(integral_one)
         # return render_template('jumper.html', integral_dump=integral_1)
         print(f'select time {check_comp}')
         # check_comp =  str(request.form['check_comp'])
 
         if check_comp == 'integral':
-            return  render_template("jumper.html", dumpy=integral_one )
+            return  render_template("jumper.html", dumpy=interlooper )
         elif check_comp == 'derivate':
-            return  render_template("jumper.html", dumpy=integral_one)
+            return  render_template("jumper.html", dumpy=interderiv)
         elif check_comp == 'limit':
-            return  render_template("jumper.html", dumpy=integral_one)
+            return  render_template("jumper.html", dumpy=interlimit)
         elif check_comp == 'matrix':
-            return  render_template("jumper.html", dumpy=integral_one)
+            return  render_template("jumper.html", dumpy=kmatris)
         else:
             return render_template("index.html")
     # co    mprovete 
@@ -127,6 +136,16 @@ def integrals():
     #    pass  </form>
     #Integrals()
 # <EXCLUDE FERNANDO RAMIRO ESTRADA bin   > error compress ! >
+
+@app.route('/graphics', methods = ['POST', 'GET'])
+def graphics():
+    if request.method == "POST":
+        cheff_hook = request.form["graph_1"]
+        one_sub = str(request.form["comp_valid"])
+        # if one_sub == 'var':
+
+
+
 
 @app.route('/dumper' , methods=["POST", "GET"] )
     
