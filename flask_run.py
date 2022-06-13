@@ -9,18 +9,33 @@
 # rom re import I
 
 
+#from crypt import methods
+
+
+from tkinter import W
+
+
 try: 
 
     import flask
     from brainrsolver import  brainsolver
     from flask import Flask, render_template
     from flask import request
+    import time
 #    from flask import render_template # import function render_template using file
 except  ErrorImportModule:
     import flask
 
 
 ########################### 
+
+
+
+
+# function time to worker hawww
+
+assemb = time.localtime()
+status_time =  time.strftime( "%H:%M:%S", assemb)
 
 
 app = Flask(__name__)
@@ -51,57 +66,77 @@ def operative():
     
     
     awensome = brainsolver(value_1, value_2, operations)
-    return render_template("jumper.html", result=awensome)
 
     # if operations == 'sum':
 
     # for z in  [ 'sum', 'rest', 'mod', 'divi', 'mult' ]:
     
+
+    if value_1 == [0]:
+        return render_template("index.html")
+    elif value_2 == [0]:
+        return render_template("index.html")
     #calculator
     # 
     #if operations == 'rails':
     #    return render_template("jumper.html", result=value_4)
-    #if  operations  == 'sum':
+    if  operations  == 'sum':
+        return render_template("jumper.html", result=awensome)
+    elif operations == 'rest':
+        return  render_template("jumper.html", result=awensome)
+    elif operations == 'multiply':
 
-    #elif operations == 'rest':
-    #    return  render_template("jumper.html")
-    #elif operations == 'multiply':
-    #    return render_template("jumper.html", result=brainsolver(value_1, value_2, operations))
-    #elif operations == 'divide':
-    #    return render_template("jumper.html", result=brainsolver(value_1, value_2, operations))
-        
-    #elif  operations  == 'mod':
-    #    return render_template("jumper.html", result=brainsolver(value_1, value_2, operations))
-    #else:
-    #    return render_template("index.html")
-
-        
-@app.route('/integrals', methods=["POST"])
-def integrals():
-    integral_1 = request.form["integral_1"]
-    check_comp =  str(request.form['check_comp'])
-
-    if check_comp == 'derivate':
-        return  render_template("jumper.html", Integral=integral_1 )
-    elif check_comp == 'integral':
-
-        return  render_template("jumper.html", Integral=integral_1 )
+        return render_template("jumper.html", result=awensome)
+    elif operations == 'divi':
+        return render_template("jumper.html", result=awensome)
     
+    elif  operations  == 'mod':
+        return render_template("jumper.html", result=awensome)
     else:
         return render_template("index.html")
-    # comprovete 
+
+        
+@app.route('/integrals', methods=["POST", "GET"])
+def integrals():
+    if request.method == 'POST':
+        integral_one = request.form["integral_1"]
+        check_comp = str(request.form['check_comp'])
+
+        # interlooper = int_solver(integral_one)
+        # return render_template('jumper.html', integral_dump=integral_1)
+        print(f'select time {check_comp}')
+        # check_comp =  str(request.form['check_comp'])
+
+        if check_comp == 'integral':
+            return  render_template("jumper.html", dumpy=integral_one )
+        elif check_comp == 'derivate':
+            return  render_template("jumper.html", dumpy=integral_one)
+        elif check_comp == 'limit':
+            return  render_template("jumper.html", dumpy=integral_one)
+        elif check_comp == 'matrix':
+            return  render_template("jumper.html", dumpy=integral_one)
+        else:
+            return render_template("index.html")
+    # co    mprovete 
         # pass 
 
         #if operators == "rails":
         #response = int(value_1) + 10
     #if operative== 0:
     #    pass  
-    #    pass  
+    #    pass  </form>
     #Integrals()
+# <EXCLUDE FERNANDO RAMIRO ESTRADA bin   > error compress ! >
 
+@app.route('/dumper' , methods=["POST", "GET"] )
     
-    
-app.run(debug = True ) # debugging allow settings  config all output code 
+def dumper() -> None:
+    if request.method == 'POST':
+        f = request.files['the_file']
+        f.save('/settings/slave/dumping{status_time}.txt') 
+
+
+app.run(debug = True, port=5600 ) # debugging allow settings  config all output code 
 
 
 if __name__ == "__main__":

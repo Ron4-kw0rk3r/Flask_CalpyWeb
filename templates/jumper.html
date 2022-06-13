@@ -59,11 +59,13 @@
 		<h1> <center> CALCULATOR </center> </h1> 
 		<br>
 	
-		<p> hello test </p>
+		<!--<p> hello test </p>
 		<p> progress in site develoop create all features complementation one resolv problem in determinate time </p>
-		<p> create all features  in create function seeders  </p>
+		<p> create all features  in create function seeders  </p> 
+		-->
+		
 		<h4> <center> <strong> testing programa using flask framework  </strong></center> </h4>
-		<h1> Integrals resolv </h1>
+		<h1> calculator simple </h1>
 
 		<section class="operative">
 		
@@ -71,9 +73,10 @@
 				<label for="number one"> Number one : </label>
 				<input type="number" placeholder="value" name="value_1" />
 				<br>
+
 				<!-- placeholder texto fantasma dentro del contendor que mantiene la entrada--> 
 				<label for="number twu"> Number Twu : </label>
-				<input type="number" placeholder="value" name="value_2">
+				<input type="number" placeholder="value" name="value_2" />
 				<!--input type="number" id="operation"-->
 				<!--input type="password" id="check"--> 
 				<select name="operators">
@@ -84,32 +87,65 @@
 					<option value="divi"> divide </option>
 					<option value="mod"> mod </option> 
 				</select>
+
+				<br>
 				<br>
 				<input type="submit" value="evaluador" id="calc_eval" class="btn"  />
+
 				<h2> the result is : {{ result }} </h2>
-
-				<br>
-
-				<label for="integrals"> Integrals :</label>
-				<input placeholder="integral here" name="integral_1">
-				<select name="check_comp">
-					<option value="integral"> Integral </option>
-					<option value="integral"> derivate </option>
-				</select>
-				<input type="submit" value="complex" id="integral" class="btn">
-				<br>
-				<h3>  the operation is  : {{ integral }} </h3>
 				
+				<br>
 			</form>
 		</section>
-		<!-- make bottom  in site text program site web -->
+				<!-- <input> -->
+
+		<h2> <center>  Integral  solver </center> </h2>
+		<section  class="integral">
+			<form action="/integrals", method="POST">
+				<label for="integrals"> Integrals resolv :</label>
+				<input placeholder="integral here" name="integral_1" />
+				<select name="check_comp">
+
+					<option value="integral"> Integral </option>
+					<option value="derivate"> derivate </option>
+					<option value="limit" > limit </option>
+					<option value="matrix"> matrix </option>
+				
+				</select>
+				
+				<br>
+				<input type="submit" value="integral" id="solution" class="btn" />
+				<br>
+
+				<h3>  the operation is  : {{ dumpy }} </h3>
+				
+
+				<!--{% block head%} {%endblock%} -->
+			</form>
+		</section>
+		<h2> <center> GRAPHICS </center> </h2>
+		<section class="graphics">
+				
+			<form action="/graphics" method="POST">
+				<label for="graphics"> graphics : </label>
+				<input placeholder="reference"  name="coder">
+				<br>
+				<p> graphics rest : {{ name_res }} </p>
+			</form>
+		</section>
+		 
+			
+
+
+		<!-- make bottom  in site text program site web 
 	
-		<button class="button"> result </button>
+		 <button class="button"> result </button>
 		<br>
 
 		<button class="button1"> result </button>
 		<br>
 		<button class="button2"> result </button>
+		-->
 	</body>
 </html>
 
